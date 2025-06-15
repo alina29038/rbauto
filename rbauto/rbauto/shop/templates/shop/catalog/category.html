@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/catalog/category.css' %}" />
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'scripts/categoryFilter.js' %}"></script>
+{% endblock %}
+
+{% block title %} {{ category.title }} {% endblock %}
+
+{% block content %}
+{% if subcategory %}
+<h1 class="margin-bottom-3">{{ category.title }} / {{ subcategory.title }}</h1>
+{% else %}
+<h1 class="margin-bottom-3">{{ category.title }}</h1>
+{% endif %}
+
+<label for="subcategory_select">Тип</label>
+<select id="subcategory_select" class="select-control">
+    <option value="all">Все</option>
+    {% for sc in category.subcategory_set.all %}
+    {% if subcategory and sc.id == subcategory.id %}
+    <option value="{{ sc.id }}" selected>{{ sc.title }}</option>
+    {% else %}
+    <option value="{{ sc.id }}">{{ sc.title }}</option>
+    {% endif %}
+    {% endfor %}
+</select>
+
+<label for="manufacturer_select">Производитель</label>
+<select id="manufacturer_select" class="select-control">
+    <option value="all">Все</option>
+    {% for mnfr in manufacturers %}
+    {% if manufacturer and mnfr.id == manufacturer.id %}
+    <option value="{{ mnfr.id }}" selected>{{ mnfr.title }}</option>
+    {% else %}
+    <option value="{{ mnfr.id }}">{{ mnfr.title }}</option>
+    {% endif %}
+    {% endfor %}
+</select>
+
+<button id="filters_apply_btn">Применить</button>
+
+
+<div class="products__list">
+    {% for product in page_obj %}
+    <div class="products__list__item">
+        <a href="{% url 'catalog-product' product.id %}">
+            <img class="products__list__item__preview" title="{{ product.title }}" alt="{{ product.title }}"
+                src="{% static product.preview.url %}" />
+        </a>
+
+        <div class="products__list__item__description">
+            <a class="product__title__link" href="{% url 'catalog-product' product.id %}">
+                {{ product.title }}
+            </a>
+            <p class="product__description">{{ product.description }}</p>
+        </div>
+        <div class="products__list__item__actions">
+            <div class="products__list__item__price">
+                <p class="price__label">Цена:</p>
+                <p class="price">{{ product.price }} руб</p>
+            </div>
+
+            {% if product.is_available %}
+            <a href="{% url 'catalog-product' product.id %}" class="button__order">Заказать</a>
+            {% else %}
+            <button disabled class="button__out-of-order">Нет в наличии</button>
+            {% endif %}
+        </div>
+    </div>
+    <hr class="separator" />
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+        <button class="previous" id="prev_btn" data-page="{{ page_obj.previous_page_number }}">Предыдущая</button>
+        {% else %}
+        <button class="previous" id="prev_btn" disabled>Предыдущая</button>
+        {% endif %}
+        
+        <span class="current">
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+        <button class="next" id="next_btn" data-page="{{ page_obj.next_page_number }}">Следующая</button>
+        {% else %}
+        <button class="next" id="next_btn" disabled>Следующая</button>
+        {% endif %}
+    </span>
+</div>
+
+<input type="hidden" value="{{ page_obj.number }}" name="page_num" id="current_page" />
+
+{% endblock %}

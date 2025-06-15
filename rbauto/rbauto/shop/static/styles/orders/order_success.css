@@ -1,0 +1,23 @@
+.success_order_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_sent {
+    font-size: xx-large;
+    color: var(--primary-color);
+}
+
+.back {
+    margin-top: 1rem;
+    font-size: x-large;
+    color: darkslategray;
+}
+
+.back:hover {
+    color: #606060;
+}

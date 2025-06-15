@@ -1,0 +1,14 @@
+<form id="phone_call_form" method="post">
+    <label for="phone_call_name">Ваше имя</label>
+    <input type="text" name="name" id="phone_call_name" placeholder="Иванов Иван Иванович" />
+
+    <label for="phone_call_phone">Телефон<span class="form-required">*</span></label>
+    <input type="text" name="phone" id="phone_call_phone" placeholder="Ваш номер телефона" />
+
+    <input type="checkbox" name="agreed" id="phone_call_agreed" />
+    <label for="phone_call_agreed" class="checkbox-label">
+        <p class="margin-left-3">Даю согласие на <a href="#" class="privacy_policy_link">обработку своих персональных данных</a></p>
+    </label>
+
+    {% csrf_token %}
+</form>

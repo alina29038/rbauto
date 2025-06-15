@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'components/popups/phone_call_popup.html' %}
+{% include 'components/popups/feedback_popup.html' %}
+
+<header>
+    <div class="header-wrapper">
+        <div class="header__logo__wrapper">
+            <a class="header__logo"
+                title="Подбор, продажа, сервис и ремонт специальной техники в Русбизнесавто, г. Москва" href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="361px"
+                    height="89px">
+                    <image x="0px" y="0px" width="361px" height="89px"
+                        xlink:href="{% static '/images/RBA_Logo_1993_White_810x110.webp' %}"></image>
+                </svg>
+            </a>
+        </div>
+
+        <div class="text-end margin-top-3">
+            <div class="phone call_phone_495_1"><a class="header__tel" title="+78005054153" href="tel:+78005054153">8
+                    (800) 505-41-53</a></div>
+            <div class="flex-row">
+                <a data-popup="phone_call_popup" title="Заказать звонок"
+                    class="btn-order hide-for-print x-calltouch-widget">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.67 19.7">
+                        <path
+                            d="m.5,2.78C1.1,1.38,2.2.48,3.6.08c.5-.2,1,0,1.4.3.1.1.2.1.3.2.5.2.6.4.6,1s-.1,1.2-.1,1.7c0,.6-.1,1.2-.1,1.8,0,.3-.1.5-.4.7-.5.3-1,.5-1.5.8-.5.2-.6.3-.6.9.2,2.7,1.3,5.1,3.1,7.1.3.3.5.4.9.2.6-.3,1.2-.6,1.9-.8.4-.2.6-.2.9.1.5.6,1.1,1.3,1.6,1.9.3.4.6.7.9,1.1.2.2.2.4.1.6-.5,1.1-1.3,1.9-2.7,2-1.4.1-2.7-.2-3.7-1.1-1.2-1.1-2.4-2.3-3.4-3.7C1.5,12.88.8,10.78.4,8.48c-.2-1.1-.4-2.2-.4-3.4.1-1,.2-1.7.5-2.3">
+                        </path>
+                    </svg>
+                    <span>Заказать звонок</span>
+                </a>
+                <button class="btn-feedback margin-left-3" data-popup="feedback_popup" aria-controls="feedback"
+                    aria-haspopup="dialog" tabindex="0">Оставить отзыв</button>
+            </div>
+
+            <div class="margin-top-3 flex-row align-center justify-end">
+                <img alt="Седельные тягачи 6х4 - HH_icon" src="{% static '/images/icons/HH_icon.svg' %}" loading="lazy"
+                    style="margin-bottom:.57143rem;border-right:2px solid #fff;margin-right:5px;" width="114">
+                <a title="telegram" class="icon" rel="nofollow" target="_blank" href="https://t.me/rbauto_ru">
+                    <img alt="Телеграм канал" src="{% static '/images/icons/social/telegram_w.svg' %}" width="28">
+                </a>
+                <a title="rutube" class="icon" rel="nofollow" target="_blank"
+                    href="https://rutube.ru/channel/42854114/">
+                    <img alt="Седельные тягачи 6х4 - rutube_w" src="{% static '/images/icons/social/rutube_w.svg' %}"
+                        width="28">
+                </a>
+                <a title="vk" class="icon" rel="nofollow" target="_blank" href="https://vk.com/rusbusinessauto">
+                    <img alt="VK" src="{% static '/images/icons/social/vk_w.svg' %}" width="28">
+                </a>
+                <a title="youtube" class="icon" rel="nofollow" target="_blank"
+                    href="https://www.youtube.com/channel/UCCLTqxk6ozpERTA-uzR1OEA">
+                    <img alt="youtube" src="{% static '/images/icons/social/youtube_w.svg' %}" width="28">
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+</header>

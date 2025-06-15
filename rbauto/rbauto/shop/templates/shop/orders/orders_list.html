@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/orders/orders_list.css' %}" />
+{% endblock %}
+
+{% block title %}Мои заказы{% endblock %}
+
+{% block content %}
+<h1>Список заказов</h1>
+{% if orders|length %}
+<div class="orders__list">
+    {% for order in orders %}
+    <div class="orders__list__item">
+        <a href="{% url 'catalog-product' order.product.id %}">
+            <img class="orders__list__item__preview" title="{{ order.product.title }}" alt="{{ order.product.title }}"
+                src="{% static order.product.preview.url %}" />
+        </a>
+
+        <div class="orders__list__item__description">
+            <a class="orders__title__link" href="{% url 'catalog-product' order.product.id %}">
+                {{ order.product.title }}
+            </a>
+            <p class="orders__description">{{ order.product.description }}</p>
+        </div>
+        <div class="orders__list__item__actions">
+            <div class="orders__list__item__order__info">
+                <p class="info__label">Дата: {{ order.created_at|date:"d-m-Y" }}</p>
+                <p class="info__label">Статус: 
+                    {% if order.order_status == "opened" %}
+                    <span class="order__open">Открыт</span>
+                    {% else %}
+                    Закрыт
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="orders__list__item__price">
+                <p class="price__label">Цена:</p>
+                <p class="price">{{ order.product.price }} руб</p>
+            </div>
+        </div>
+    </div>
+    <hr class="separator" />
+    {% endfor %}
+</div>
+{% else %}
+<p class="empty_orders">Заказы отсутствуют</p>
+{% endif %}
+{% endblock %}

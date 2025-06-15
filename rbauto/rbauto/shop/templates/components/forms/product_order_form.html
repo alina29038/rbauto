@@ -1,0 +1,23 @@
+<form id="product_order_form" method="post" action="{% url 'catalog-product-order' product_id %}">
+    <label for="product_order_contact_name">Контактное лицо<span class="form-required">*</span></label>
+    <input type="text" name="contact_name" id="product_order_contact_name" placeholder="Иванов Иван Иванович" />
+
+    <label for="product_order_contact_phone">Контактный телефон<span class="form-required">*</span></label>
+    <input type="text" name="contact_phone" id="product_order_contact_phone" placeholder="+7-999-309-10-69" />
+
+    <label for="product_order_email">Электронная почта<span class="form-required">*</span></label>
+    <input type="text" name="email" id="product_order_email" placeholder="example@rbauto.ru" />
+
+    <input type="checkbox" name="agreed" id="product_order_agreed" />
+    <label for="product_order_agreed" class="checkbox-label">
+        <p class="margin-left-3">
+            Я ознакомлен и принимаю условия 
+            <a href="#" class="privacy_policy_link">
+                Соглашения об использовании сайта
+            </a>
+            , в том числе в части обработки и использования моих персональных данных
+        </p>
+    </label>
+
+    {% csrf_token %}
+</form>

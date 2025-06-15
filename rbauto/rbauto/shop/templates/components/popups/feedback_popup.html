@@ -1,0 +1,17 @@
+{% extends 'components/popups/popup.html' %}
+
+{% block popup_id %}feedback_popup{% endblock %}
+
+{% block popup_title %}
+<p>Оставить отзыв</p>
+{% endblock %}
+
+{% block popup_content %}
+
+{% include 'components/forms/feedback_form.html' %}
+
+{% endblock %}
+
+{% block popup_footer %}
+<button class="popup__done" onclick="window.utils.submitForm('feedback_popup_form')">Отправить</button>
+{% endblock %}

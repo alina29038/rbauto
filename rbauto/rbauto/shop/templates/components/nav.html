@@ -1,0 +1,19 @@
+<nav>
+    {% if request.user.is_authenticated %}
+    <div class="flex-row justify-between align-center">
+        <span class="welcome">Добро пожаловать, <span class="username">{{ request.user.username }}</span></span>
+        <div class="flex-row justify-between align-center">
+            <a href="{% url 'orders' %}" title="Мои заказы" class="lk-link">Мои заказы</a>
+            <a href="{% url 'logout' %}" title="Выход" class="margin-left-3 lk-logout">Выйти</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="flex-row justify-between align-center">
+        <span class="welcome">Добро пожаловать, <span class="username">Гость</span></span>
+        <div class="flex-row justify-between align-center">
+            <a href="{% url 'sign-in' %}" title="Вход в профиль" class="lk-link">Войти в личный кабинет</a>
+        </div>
+    </div>
+    
+    {% endif %}
+</nav>

@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/icons/favicons/favicon-16x16.webp' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/icons/favicons/favicon-32x32.webp' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/popup.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/form.css' %}" />
+
+    {% block styles %} {% endblock %}
+
+    <script src="{% static 'scripts/utils.js' %}"></script>
+    <script src="{% static 'scripts/popup.js' %}"></script>
+
+    {% block scripts %} {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    {% include 'components/header.html' %}
+    {% include 'components/nav.html' %}
+
+    <main class="page">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'components/footer.html' %}
+</body>
+
+</html>

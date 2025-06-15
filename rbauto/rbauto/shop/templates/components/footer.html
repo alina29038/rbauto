@@ -1,0 +1,123 @@
+{% load static %}
+
+<footer>
+    <div class="flex-column font-small">
+        <div class="flex-row justify-between">
+            <div class="flex-column max-width-15">
+                <a class="header__logo"
+                    title="Подбор, продажа, сервис и ремонт специальной техники в Русбизнесавто, г. Москва" href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px"
+                        height="45px">
+                        <image x="0px" y="0px" width="180px" height="45px"
+                            xlink:href="{% static '/images/RBA_Logo_1993_White_810x110.webp' %}"></image>
+                    </svg>
+                </a>
+                <p>© 2008-2025</p>
+                <p>Компания «Русбизнесавто» Москва – продажа спецтехники и запчастей</p>
+
+                <div class="margin-top-3 flex-row align-center justify-start">
+                    <a title="telegram" class="icon" rel="nofollow" target="_blank" href="https://t.me/rbauto_ru">
+                        <img alt="Телеграм канал" src="{% static '/images/icons/social/telegram_w.svg' %}" width="28">
+                    </a>
+                    <a title="rutube" class="icon margin-left-3" rel="nofollow" target="_blank"
+                        href="https://rutube.ru/channel/42854114/">
+                        <img alt="Седельные тягачи 6х4 - rutube_w"
+                            src="{% static '/images/icons/social/rutube_w.svg' %}" width="28">
+                    </a>
+                    <a title="vk" class="icon margin-left-3" rel="nofollow" target="_blank"
+                        href="https://vk.com/rusbusinessauto">
+                        <img alt="VK" src="{% static '/images/icons/social/vk_w.svg' %}" width="28">
+                    </a>
+                    <a title="youtube" class="icon margin-left-3" rel="nofollow" target="_blank"
+                        href="https://www.youtube.com/channel/UCCLTqxk6ozpERTA-uzR1OEA">
+                        <img alt="youtube" src="{% static '/images/icons/social/youtube_w.svg' %}" width="28">
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="margin-left-4">
+                <div class="flex-column uppercase">
+                    <span class="footer__heading font-bold">
+                        Продукция
+                    </span>
+
+                    <ul class="footer__list">
+                        {% for category in categories %}
+                        <li class="footer__list__item">
+                            <a class="footer__link" title="{{category.title}}" href="{% url 'catalog-category' category.id %}">
+                                {{category.title}}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="margin-left-4">
+                <div class="flex-column uppercase">
+                    <span class="footer__heading font-bold">
+                        Русбизнесавто
+                    </span>
+
+                    <ul class="footer__list">
+                        <li class="footer__list__item">
+                            <a href="#" class="footer__link">О компании</a>
+                        </li>
+                        <li class="footer__list__item">
+                            <a href="#" class="footer__link">Вакансии</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="margin-left-4">
+                <div class="flex-column uppercase">
+                    <span class="footer__heading font-bold">
+                        Информация
+                    </span>
+
+                    <ul class="footer__list">
+                        <li class="footer__list__item">
+                            <a href="#" class="footer__link">Спецпредложения</a>
+                        </li>
+                        <li class="footer__list__item">
+                            <a href="#" class="footer__link">Продажа недвижимости</a>
+                        </li>
+                        <li class="footer__list__item">
+                            <a href="#" class="footer__link">Новости</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="margin-left-4">
+                <div class="flex-column uppercase max-width-15">
+                    <span class="footer__heading font-bold">
+                        Контакты
+                    </span>
+
+                    <p>Москва</p>
+                    <p>
+                        <a class="footer__link" title="+78005116072" href="tel:+78005116072">8 (800) 511-60-72</a>
+                    </p>
+
+                    <span class="footer__heading font-bold margin-top-3">Время работы</span>
+                    <p class="font-small">9:00 - 18:00, выходные дни: суббота и воскресенье</p>
+                    <span class="footer__heading font-bold margin-top-3">Адрес</span>
+                    <p class="font-small">
+                        141431 г. Москва, ул. Комсомольская, д.3А, стр. 2
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="margin-top-5 font-small">
+            Обращаем ваше внимание на то, что информация
+            (включая цены и другие предложения/акции) размещенная на сайте носит исключительно информационно-справочный
+            характер и не являются публичной офертой, определяемой положениями ст. 435 ГК РФ, ст. 437 ГК РФ <br>
+            Актуальную информацию о сроках и порядке проведения регламентных, технических и иных работ необходимо
+            уточнять дополнительно.
+        </p>
+        <p class="margin-top-3 font-small">ООО "Компания СИМ-авто" ИНН/ОГРН 7729588182/1077762707626</p>
+    </div>
+</footer>

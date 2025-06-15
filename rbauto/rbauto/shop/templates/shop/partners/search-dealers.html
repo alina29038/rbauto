@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/partners/search-dealers.css' %}" />
+{% endblock %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+
+<style>
+    .requirements__item::before {
+        background: url("{% static 'images/icons/arr3.svg' %}") no-repeat center;
+    }
+</style>
+
+<h1>Покупаем Дилерский центр</h1>
+<h2 class="h2 margin-top-3">Купим Дилерский Центр B7*/КАМАЗ</h2>
+<img width="600px" alt="Покупаем Дилерский Центр" src="{% static 'images/cntr.svg' %}" />
+
+<h1 class="margin-top-5">Требования:</h1>
+
+<ul class="requirements margin-top-3">
+	<li class="requirements__item">Действующий дилерский центр B7/КАМАЗ;</li>
+	<li class="requirements__item">Действующее грузовое СТО;</li>
+	<li class="requirements__item">
+		Расположение: первая линия федеральной трассы / проездной дороги;
+	</li>
+	<li class="requirements__item">Участок земли под стоянку от 2 гектаров.</li>
+</ul>
+
+<p class="font-bold margin-top-5 font-large">Рассмотрим любые варианты!</p>
+<p class="margin-top-5 font-large">Контакты для предложений:</p>
+<a href="mailto:1002684@rbauto.ru" class="contact-email font-large">1002684@rbauto.ru</a>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/orders/order_success.css' %}" />
+{% endblock %}
+
+{% block title %}Спасибо за покупку!{% endblock %}
+
+{% block content %}
+<div class="success_order_wrapper">
+    <h1 class="order_sent">Ваш заказ успешно отправлен!</h1>
+    <a class="back" href="{{ previous_url }}">...Вернуться назад</a>
+</div>
+{% endblock %}

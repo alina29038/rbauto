@@ -1,0 +1,9 @@
+<form id="sign_in_form" method="post">
+    <label for="sign_in_name">Логин<span class="form-required">*</span></label>
+    <input type="text" name="username" id="sign_in_name" placeholder="user" class="input-control" />
+
+    <label for="sign_in_password">Пароль<span class="form-required">*</span></label>
+    <input type="password" name="password" id="sign_in_password" placeholder="Ваш пароль" class="input-control" />
+
+    {% csrf_token %}
+</form>

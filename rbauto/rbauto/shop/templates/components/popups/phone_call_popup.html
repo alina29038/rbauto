@@ -1,0 +1,17 @@
+{% extends 'components/popups/popup.html' %}
+
+{% block popup_id %}phone_call_popup{% endblock %}
+
+{% block popup_title %}
+<p>Позвонить нам</p>
+{% endblock %}
+
+{% block popup_content %}
+
+{% include 'components/forms/phone_call_form.html' %}
+
+{% endblock %}
+
+{% block popup_footer %}
+<button class="popup__done" onclick="window.utils.submitForm('phone_call_form')">Отправить</button>
+{% endblock %}

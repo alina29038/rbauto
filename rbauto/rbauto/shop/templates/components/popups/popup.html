@@ -1,0 +1,11 @@
+<div class="popup" id="{% block popup_id %}{% endblock %}">
+    <div class="popup__header">
+        <h3 class="popup__header__title">{% block popup_title %}{% endblock %}</h3>
+        <div class="popup__header__close">X</div>
+    </div>
+    <div class="popup__content">{% block popup_content %}{% endblock %}</div>
+    <div class="popup__footer">
+        {% block popup_footer %}{% endblock %}
+        <button class="popup__close">Закрыть</button>
+    </div>
+</div>

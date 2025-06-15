@@ -1,0 +1,15 @@
+<form id="sign_on_form" method="post">
+    <label for="sign_on_name">Логин<span class="form-required">*</span></label>
+    <input type="text" name="username" id="sign_on_name" placeholder="user" class="input-control" />
+
+    <label for="sign_on_email">E-mail<span class="form-required">*</span></label>
+    <input type="text" name="email" id="sign_on_email" placeholder="example@rbauto.ru" class="input-control" />
+
+    <label for="sign_on_password">Пароль<span class="form-required">*</span></label>
+    <input type="password" name="password" id="sign_on_password" placeholder="Ваш пароль" class="input-control" />
+
+    <label for="sign_on_password_repeat">Повторите пароль<span class="form-required">*</span></label>
+    <input type="password" name="password-repeat" id="sign_on_password_repeat" class="input-control" />
+
+    {% csrf_token %}
+</form>

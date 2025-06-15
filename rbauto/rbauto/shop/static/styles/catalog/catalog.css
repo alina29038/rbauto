@@ -1,0 +1,47 @@
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 300px;
+    text-align: center;
+}
+
+.card__preview {
+    width: 300px;
+}
+
+.card__title {
+    color: var(--link-color);
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card__title:visited {
+    color: var(--link-color);
+}
+
+.card__title:hover {
+    color: var(--primary-color);
+}
+
+.card__content {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__content__item {
+    margin-bottom: 0.5rem;
+    font-size: large;
+    color: #000;
+    font-weight: normal;
+}
+
+.card__content__item:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}

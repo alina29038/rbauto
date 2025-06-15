@@ -1,0 +1,17 @@
+{% extends 'components/popups/popup.html' %}
+
+{% block popup_id %}product_order_popup{% endblock %}
+
+{% block popup_title %}
+<p>Заявка на покупку</p>
+{% endblock %}
+
+{% block popup_content %}
+
+{% include 'components/forms/product_order_form.html' with product_id=product.id %}
+
+{% endblock %}
+
+{% block popup_footer %}
+<button class="popup__done" onclick="window.utils.submitForm('product_order_form')">Отправить</button>
+{% endblock %}

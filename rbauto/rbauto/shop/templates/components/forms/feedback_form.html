@@ -1,0 +1,17 @@
+<form id="feedback_popup_form" method="post">
+    <label for="feedback_name">Ваше имя</label>
+    <input type="text" name="name" id="feedback_name" placeholder="Иванов Иван Иванович" />
+
+    <label for="feedback_email">E-mail<span class="form-required">*</span></label>
+    <input type="text" name="email" id="feedback_email" placeholder="example@rbauto.ru" />
+
+    <label for="feedback_text">Ваше сообщение<span class="form-required">*</span></label>
+    <textarea name="text" cols="40" rows="5" aria-multiline="true" id="feedback_text" placeholder="Текст"></textarea>
+
+    <input type="checkbox" name="agreed" id="feedback_agreed" />
+    <label for="feedback_agreed" class="checkbox-label">
+        <p class="margin-left-3">Даю согласие на <a href="#" class="privacy_policy_link">обработку своих персональных данных</a></p>
+    </label>
+
+    {% csrf_token %}
+</form>
