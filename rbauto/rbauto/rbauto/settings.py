@@ -8,7 +8,7 @@ SECRET_KEY = 'w-*)*9y_zu5ctb#!@om@@5)(x72sx!bdx@^ti7sryi887#trjz'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['rusbsauto54.com', 'www.rusbsauto54.com'] 
+ALLOWED_HOSTS = ['rusbsauto54.com', 'www.rusbsauto54.com', '5.129.207.211'] 
 
 
 # === ПРИЛОЖЕНИЯ ===
